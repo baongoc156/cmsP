@@ -1,0 +1,39 @@
+// Comments Styling
+
+#respond {
+	input[type="submit"] {
+		@include  button();
+	}
+}
+.comment-body {
+	border-bottom: solid 1px #eeeeee;
+}
+
+#comments {
+	ol, ul {
+		list-style: none;
+	}
+	.comment-meta {
+		a {
+			margin-right: 0.5em;
+			text-decoration: none;
+		}
+	}
+	.comment-author {
+		display: flex;
+		align-items: center;
+		img {
+			border-radius: 50%;
+			margin-right: 0.5em;
+		}
+	}
+	.reply a {
+		display: inline-block;
+		@include  button();
+		margin-bottom: 1.4em;
+		text-decoration: none;
+	}
+	p {
+		margin-left: 1em;
+	}
+}

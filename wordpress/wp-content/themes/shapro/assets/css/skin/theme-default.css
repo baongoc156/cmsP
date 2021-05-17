@@ -1,0 +1,303 @@
+.site-branding-text, .site-branding-text h1 a {
+	color: #fff;
+}
+.navbar-collapse.show {
+	background: #273272;
+}
+a:hover {
+	color: #0c59db;
+}
+h1 a, h4 a {
+	color: #151a33;
+}
+button, .btn-default, button, [type="button"], [type="reset"], [type="submit"], .btn, .more-link {
+    background: #0c59db;
+	color: white;
+	border-color: #0c59db;
+}
+button:hover, [type="button"]:hover, [type="reset"]:hover, [type="submit"]:hover, 
+.btn:hover, .more-link:hover,
+button:hover, .btn-default:hover, .btn-default:focus {
+	background: #273272;
+	color: white;
+	border-color: #273272;
+}
+blockquote {
+    background: #f5f5f5;
+    border-color: #0c59db;;
+}
+
+.sliderhome .owl-nav div {
+	background: rgba(0,0,0,0.2);
+	color: white;
+	border-color: rgba(0,0,0,0.2);
+}
+.owl-nav div {
+	background: #273272;
+	color: white;
+	border-color: #273272;
+}
+.owl-nav div:hover {
+	background: #0c59db;
+	color: white;
+	border-color: #0c59db;
+}
+
+.btn-white {
+	background: white;
+	color: #0c59db;
+	border-color: white;
+}
+.btn-white:hover, .btn-white:focus {
+	background: #0c59db;
+	color: white;
+	border-color: #0c59db;
+}
+.widget .tagcloud a {
+	background: #eee;
+	color: #273272;
+}
+.widget .tagcloud a:hover {
+	background: #0c59db;
+	color: white;
+}
+.widget ul li a {
+	color: #748494;
+}
+.widget ul li a:hover {
+	color: #0c59db;
+}
+/* ---- navbar ----*/
+.navbar li a {
+	color: white;
+}
+.navbar .dropdown-menu a {
+	color: #0c59db;
+}
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:focus  {
+	background: #0c59db;
+	color: #fff;
+}
+/* ---- topbar ----*/
+.topbar {
+	background: #273272;
+}
+.topbar ul li {
+	color: white;
+}
+.topbar ul li a {
+	color: white;
+}
+.topbar ul.left li i {
+	color: #0c59db;
+}
+.topbar .quote_btn {
+	color: #fff !important;
+}
+/* ---- sliderhome ----*/
+.sliderhome .slide:before {
+    background: rgba(2, 45, 98, 0.7);
+}
+.sliderhome  .owl-nav div {
+  color: white;
+}
+.sliderhome h2, .sliderhome {
+  color: white;
+}
+/* ---- ==== section title ==== ----*/
+.bg-dark:after {
+    background: #273272;
+}
+.bg-dark  h2, .bg-dark .section-heading h2.ititle, .bg-dark {
+	color: #fff;
+}
+.bg-default {
+    background: #0c59db;
+}
+.section-heading h3.sub-title {
+	color: #0c59db;
+}
+/* ---- features ----*/
+.feature {
+	
+}
+.feature i {
+  background: #273272;
+  color: white;
+} 
+.feature:hover i {
+  background: #0c59db;
+  color: white;
+}
+.feature h5:hover {
+	color: #0c59db;
+}
+/* ---- teams ----*/
+.service .bottom_text h2 a {
+	 color: #273272;
+}
+.service .top_icon i {
+	color: #0c59db;
+}
+.service:hover .top_icon i, .service:hover .bottom_text h2 a, .service:hover .bottom_text p {
+    color: white;
+}
+.service:hover .inner {
+    background: rgba(0,0,0,0.4);
+}
+.service.img:hover .inner {
+    background: transparent;
+}
+.service.img:hover .top_icon i, .service.img:hover .bottom_text h2 a, .service.img:hover .bottom_text p {
+    color: unset;
+}
+.bg-grey {
+	background: #f8f8f8;
+}
+/* ---- teams ----*/
+.top_icon i {
+	color: #000;
+}
+.team{
+	background: #fff;
+}
+.team h2, .team h2 a {
+	color: #000;
+}
+.designation{
+	color: #0c59db;
+}
+.team .social {
+	background: rgba(0,0,0,0.4);
+}
+.team .social a {
+	background: white;
+	color: #0c59db;
+}
+.team .social a:hover{
+	background: #0c59db;
+	color: white;
+}
+/* ---- portfolio ----*/
+.portfolio, .portfolio h2 a {
+    color: white;
+}
+.portfolio:hover {
+    background: rgba(0,0,0,0.4);
+}
+.portfolio .inner{
+    background: rgba(0,0,0,0.4);
+    color: white;
+}
+.portfolio .icon a {
+    background: #fff;
+    color: #0c59db;
+}
+.portfolio .icon a:hover{
+	background: #0c59db;
+	color: white;
+}
+/* ---- teams ----*/
+.funfact i {
+	color: #0c59db;
+}
+/* ---- callout ----*/
+.callout, .callout h2, .callout h3 {
+	color: white;
+}
+/* ---- calltoaction ----*/
+.calltoaction, .calltoaction h2 {
+	color: white;
+}
+.plan .price {
+	background: #0c59db;
+	color: white;
+}
+/* ---- ==== Breadcrumb ==== ----*/
+.breadcrumb .inner {
+    background: rgba(2, 45, 98, 0.7);
+}
+.breadcrumb h1 {
+    color: #fff;
+}
+.breadcrumb, .breadcrumb ul li a, .breadcrumb-item.active {
+	color: #fff;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #fff !important;
+}
+.breadcrumb-item.active {
+    color: #fff !important;
+}
+
+.sidebar .widget h3 {
+	border-left-color: #0c59db;
+}
+
+.widget .input-group-btn .btn {
+	background: #0c59db;
+	color: white;
+}
+.widget .input-group-btn .btn:hover {
+	background: #273272;
+	color: white;
+}
+/* ---- blogpost ----*/
+.post-thumbnail a {
+	outline-color: #0c59db;
+}
+.post_img span.date {
+    background: #0c59db;
+    color: #fff;
+}
+.post_img span.date a {
+    color: #fff;
+}
+.post_meta a {
+	color: #273272;
+}
+.post_meta a:hover {
+	color: #0c59db;
+}
+/* ---- footer ----*/
+footer .inner{
+	background: rgba(2, 45, 98, 0.7);
+}
+footer .widget h4,footer .widget h5, footer .widget {
+	color: white;
+}
+footer .widget ul li, footer .widget ul li a {
+	color: white;
+}
+footer .widget ul li a:hover {
+	color: #0c59db;
+}
+footer .bottom {
+	background: #273272;
+	color: white;
+}
+footer .bottom a, footer .site-info a {
+	color: white;
+}
+footer .bottom a:hover, footer .site-info a:hover, footer .site-info a:focus {
+	color: #0c59db;
+}
+
+/* Pagination */
+
+.navigation.pagination .nav-links .page-numbers, .navigation.pagination .nav-links a, .single-nav-links a, .single-nav-links span  {
+	background: #fff;
+	color: #999;
+}
+
+.nav-next a, .nav-previous a {
+	color: #000;
+}
+.nav-next a:hover, .nav-next a:focus, .nav-previous a:hover, .nav-previous a:focus {
+	color: #0c59db;
+}
+.navigation.pagination .nav-links .page-numbers:hover, .navigation.pagination .nav-links .page-numbers:focus, .navigation.pagination .nav-links .page-numbers.current, .navigation.pagination .nav-links .page-numbers.current:hover,  .navigation.pagination .nav-links .page-numbers.current:focus, .single-nav-links a.current, .single-nav-links span.current, .single-nav-links a:hover, .single-nav-links span:hover, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	border-color: #0c59db;
+	background: #0c59db;
+	color: #fff;
+}

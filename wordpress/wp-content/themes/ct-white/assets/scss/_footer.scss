@@ -1,0 +1,26 @@
+//Footer Styling
+
+#footer-sidebar {
+	background-color: $accent;
+	padding-top: 2em;
+	h2.widget-title {
+		color: white;
+	}
+	a {
+		color: white;
+	}
+}
+
+#colophon {
+	background-color: darken($accent, 10%);
+	text-align: center;
+	color: white;
+	.site-info {
+		display: inline-block;
+		padding: 1em 0;
+	}
+	a {
+		color: white;
+		font-weight: 600;
+	}
+}

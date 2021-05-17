@@ -1,0 +1,38 @@
+// Variables used in the theme
+
+%font {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#header-wrapper {
+	display: flex;
+	align-items: center;
+	margin: 1.2em;
+	button {
+		padding: 0;
+		border: 0;
+		background: none;
+		margin-left: auto;
+		color: $accent;
+		span {
+			font-size: 2em;
+			width: 100%;
+			height: auto;
+		}
+	}
+	.site-title {
+		margin: 0;
+		a {
+			text-decoration: none;
+		}
+	}
+	.site-description {
+		margin: 0;
+	}
+}
+
+#masthead {
+	img {
+		width: 100%;
+	}
+}

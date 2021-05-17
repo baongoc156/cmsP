@@ -1,0 +1,24 @@
+// Single Page and Post Styling
+
+body.single, body.page {
+	.entry-title {
+		color: black;
+	}
+	.singular-thumb {
+		margin-bottom: 1em;
+	}
+	.entry-footer {
+		a {
+			margin-left: 0.4em;
+		}
+		.edit-link {
+			a {
+				display: inline-block;
+				@include button();
+			}
+		}
+	}
+	.nav-links a {
+		text-decoration: none;
+	}
+}

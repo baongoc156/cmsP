@@ -1,0 +1,7 @@
+//Block Styles
+
+@use 'variables' as *;
+
+.is-style-ct-white-btn a {
+	@include  button();
+}
