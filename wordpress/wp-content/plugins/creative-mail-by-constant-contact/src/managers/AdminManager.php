@@ -72,7 +72,6 @@ class AdminManager
         add_action(self::ADMIN_NOTICES_HOOK,  array($this, 'add_admin_notice_review' ));
         add_action(self::ADMIN_NOTICES_HOOK,  array($this, 'add_admin_get_started_banner' ));
         add_action(self::ADMIN_NOTICES_HOOK,  array($this, 'add_admin_feedback_notice' ));
-        add_action(self::ADMIN_NOTICES_HOOK,  array($this, 'add_admin_woocommerce_banner' ));
         add_action(self::ADMIN_INIT_HOOK, array($this, 'activation_redirect' ));
         add_action(self::ADMIN_INIT_HOOK, array($this, 'ignore_review_notice' ));
 
@@ -328,43 +327,6 @@ class AdminManager
 
         return $footer_text;
     }
-
-    function add_admin_woocommerce_banner() {
-        $screen = get_current_screen();
-        if ($screen->id === 'woocommerce_page_wc-admin') {
-            wp_enqueue_script('ce4wp_woocommerce_notice', CE4WP_PLUGIN_URL.'assets/js/woocommerce_notice.js', null,CE4WP_PLUGIN_VERSION,true);
-            wp_localize_script('ce4wp_woocommerce_notice', self::ADMIN_CE4WP_DATA_VAR, array(
-                'url' => admin_url('admin-ajax.php'),
-                'nonce' => wp_create_nonce('ajax-nonce'),
-                'hide_banner_url' => get_rest_url( null, 'creativemail/v1/hide_banner?banner=' ),
-            ));
-
-            $ce_has_account = OptionsHelper::get_instance_id() != null;
-            if ( !$ce_has_account ) {
-                if (OptionsHelper::get_hide_banner('woocommerce_dashboard_setup_notice')) {
-                    return;
-                }
-
-                include CE4WP_PLUGIN_DIR . 'src/views/admin-wc-notice/setup.php';
-                return;
-            }
-            if (OptionsHelper::get_hide_banner('woocommerce_abandoned_cart_notice')) {
-                return;
-            }
-
-            $email_manager = CreativeMail::get_instance()->get_email_manager();
-            $supported_email_notifications = $email_manager->get_managed_email_notifications();
-            $active_email_notifications = array_filter($supported_email_notifications, function ($email_notification) {
-                return $email_notification->active === true;
-            });
-            // if number of active template is zero then show banner
-            $number_of_active_notifications = count($active_email_notifications);
-            if ($number_of_active_notifications === 0) {
-                include CE4WP_PLUGIN_DIR . 'src/views/admin-wc-notice/recovercart.php';
-            }
-        }
-    }
-
 
     function is_cm_screen_and_show_footer() {
         $screen = get_current_screen();

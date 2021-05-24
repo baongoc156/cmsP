@@ -1,6 +1,12 @@
 Changelog
 =========
 
+#### 1.3.8 - May 18 2021
+- Fixes an issue with WooCommerce recommendations.
+
+#### 1.3.7 - May 18 2021
+- Fixes an issue specific to PHP 7.4
+
 #### 1.3.6 - May 11 2021
 - Improvements for the WooCommerce integration.
 - Add support for Formidable.
