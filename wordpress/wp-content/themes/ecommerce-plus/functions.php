@@ -962,8 +962,6 @@ add_action('advanced_export_include_options','ecommerce_plus_include_my_options'
      );
      return array_unique (array_merge( $included_options, $my_options));
  }
- 
- 
 /* Preloader */
 function ecommerce_plus_preloader() {
 
