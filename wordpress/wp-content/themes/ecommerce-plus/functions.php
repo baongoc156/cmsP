@@ -1032,7 +1032,7 @@ function ecommerce_plus_preloader() {
 add_action( 'wp_body_open', 'ecommerce_plus_preloader' );
 
 //display stock status in shop page
-function stock_catalog() {
+function stock_status() {
     global $product;
     if ( $product->is_in_stock() ) {
 		echo '<div class="stock" style="color: black;" >' . $product->get_stock_quantity() . __( ' In Stock', '__x__' ) . '</div>';
@@ -1040,7 +1040,7 @@ function stock_catalog() {
 		echo '<div class="out-of-stock" style="color: red;">' . __( 'SOLD OUT', '__x__' ) . '</div>';
     }
 }
-add_action( 'woocommerce_after_shop_loop_item_title', 'stock_catalog' );
+add_action( 'woocommerce_after_shop_loop_item_title', 'stock_status' );
 
 //custom stock status in product detail
 add_filter( 'woocommerce_get_availability', 'wcs_custom_get_availability', 1, 2);
