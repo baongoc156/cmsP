@@ -59,7 +59,15 @@ $ecommerce_plus_options  = ecommerce_plus_get_theme_options();
 						</div>
 						
 						<div class="col-md-5 col-sm-12 col-xs-12 header-search-widget">
-							<?php the_widget('ecommerce_plus_product_search_widget'); ?>
+							<?php
+								if ($ecommerce_plus_options['ajax_search'] && class_exists('DGWT_WC_Ajax_Search')) {
+									?><div class="header-ajax-search-container"><?php
+										echo do_shortcode('[wcas-search-form]');
+									?></div><?php
+								} else {
+									the_widget('ecommerce_plus_product_search_widget');
+								}								
+							?>
 						</div>
 						
 						<div class="col-md-3 col-sm-12 col-xs-12 header-woocommerce-icons">

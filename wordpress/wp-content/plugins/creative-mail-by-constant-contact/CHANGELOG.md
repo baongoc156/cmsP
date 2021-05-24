@@ -1,6 +1,11 @@
 Changelog
 =========
 
+#### 1.3.6 - May 11 2021
+- Improvements for the WooCommerce integration.
+- Add support for Formidable.
+- Add support for Abandoned cart emails in WooCommerce.
+
 #### 1.3.5 - March 22 2021
 - Addresses two small issues where some relative URLs would not work for WP installs in subdirectories.
 

@@ -1,9 +1,5 @@
 <?php
 /**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
  * @package twentysixteen
  * @subpackage eCommerce Plus
  * @since 1.0.0
@@ -442,15 +438,6 @@ add_action( 'wp_footer', 'ecommerce_plus_include_svg_icons', 9999 );
 
 /**
  * Return SVG markup.
- *
- * @param array $args {
- *     Parameters needed to display an SVG.
- *
- *     @type string $icon  Required SVG icon filename.
- *     @type string $title Optional SVG title.
- *     @type string $desc  Optional SVG description.
- * }
- * @return string SVG markup.
  */
 function ecommerce_plus_get_svg( $args = array() ) {
 	// Make sure $args are an array.
@@ -481,17 +468,6 @@ function ecommerce_plus_get_svg( $args = array() ) {
 	// Set ARIA.
 	$aria_labelledby = '';
 
-	/*
-	 * ceylonthemes doesn't use the SVG title or description attributes; non-decorative icons are described with .screen-reader-text.
-	 *
-	 * However, child themes can use the title and description to add information to non-decorative SVG icons to improve accessibility.
-	 *
-	 * Example 1 with title: <?php echo ecommerce_plus_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ) ) ); ?>
-	 *
-	 * Example 2 with title and description: <?php echo ecommerce_plus_get_svg( array( 'icon' => 'arrow-right', 'title' => __( 'This is the title', 'textdomain' ), 'desc' => __( 'This is the description', 'textdomain' ) ) ); ?>
-	 *
-	 * See https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/.
-	 */
 	if ( $args['title'] ) {
 		$aria_hidden     = '';
 		$unique_id    	 = uniqid();
@@ -517,10 +493,6 @@ function ecommerce_plus_get_svg( $args = array() ) {
 
 	/*
 	 * Display the icon.
-	 *
-	 * The whitespace around `<use>` is intentional - it is a work around to a keyboard navigation bug in Safari 10.
-	 *
-	 * See https://core.trac.wordpress.org/ticket/38387.
 	 */
 	$svg .= ' <use href="#icon-' . esc_html( $args['icon'] ) . '" xlink:href="#icon-' . esc_html( $args['icon'] ) . '"></use> ';
 
@@ -536,12 +508,6 @@ function ecommerce_plus_get_svg( $args = array() ) {
 
 /**
  * Add dropdown icon if menu item has children.
- *
- * @param  string $title The menu item's title.
- * @param  object $item  The current menu item.
- * @param  array  $args  An array of wp_nav_menu() arguments.
- * @param  int    $depth Depth of menu item. Used for padding.
- * @return string $title The menu item's title with dropdown icon.
  */
 function ecommerce_plus_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location ) {
@@ -557,8 +523,6 @@ function ecommerce_plus_dropdown_icon_to_menu_link( $title, $item, $args, $depth
 add_filter( 'nav_menu_item_title', 'ecommerce_plus_dropdown_icon_to_menu_link', 10, 4 );
 
 /**
- * Returns an array of supported social links (URL and icon name).
- *
  * @return array $social_links_icons
  */
 function ecommerce_plus_social_links_icons() {
@@ -603,22 +567,12 @@ function ecommerce_plus_social_links_icons() {
 
 	/**
 	 * Filter eCommerce Plus social links icons.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $social_links_icons Array of social links icons.
 	 */
 	return apply_filters( 'ecommerce_plus_social_links_icons', $social_links_icons );
 }
 
 /**
  * Display SVG icons in social links menu.
- *
- * @param  string  $item_output The menu item output.
- * @param  WP_Post $item        Menu item object.
- * @param  int     $depth       Depth of the menu.
- * @param  array   $args        wp_nav_menu() arguments.
- * @return string  $item_output The menu item output with social icon.
  */
 function ecommerce_plus_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Get supported social icons.
@@ -639,9 +593,6 @@ add_filter( 'walker_nav_menu_start_el', 'ecommerce_plus_nav_menu_social_icons', 
 
 /**
  * Display SVG icons as per the link.
- *
- * @param  string   $social_link        Theme mod value rendered
- * @return string  SVG icon HTML
  */
 function ecommerce_plus_return_social_icon( $social_link ) {
 	// Get supported social icons.

@@ -28,6 +28,7 @@ function ecommerce_plus_get_default_theme_options() {
 		'home_section_12'				=> '',
 		
 		'prealoader_style'				=> '',
+		'ajax_search'					=> false,
 		
 		//layout
 		'footer_width'					=> 1280,

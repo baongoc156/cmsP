@@ -1031,3 +1031,54 @@ function ecommerce_plus_preloader() {
 }
 add_action( 'wp_body_open', 'ecommerce_plus_preloader' );
 
+//display stock status in shop page
+function stock_catalog() {
+    global $product;
+    if ( $product->is_in_stock() ) {
+		echo '<div class="stock" style="color: black;" >' . $product->get_stock_quantity() . __( ' In Stock', '__x__' ) . '</div>';
+    } else {
+		echo '<div class="out-of-stock" style="color: red;">' . __( 'SOLD OUT', '__x__' ) . '</div>';
+    }
+}
+add_action( 'woocommerce_after_shop_loop_item_title', 'stock_catalog' );
+
+//custom stock status in product detail
+add_filter( 'woocommerce_get_availability', 'wcs_custom_get_availability', 1, 2);
+function wcs_custom_get_availability( $availability, $_product ) {
+    if ( $_product->is_in_stock() ) {
+        $availability['availability'] = ''.$_product->get_stock_quantity() .__(' In Stock', 'woocommerce');
+    }
+    if ( ! $_product->is_in_stock() ) {
+        $availability['availability'] = __('Sold Out', 'woocommerce');
+    }
+    return $availability;
+}
+
+/* code to add cart, account wishist popup */
+add_action('wp_footer', 'ecommerce_plus_popup_cart');
+function ecommerce_plus_popup_cart(){
+
+	if(class_exists('woocommerce')) { 
+	?>
+	<div id="scroll-cart" class="topcorner">
+	
+		<ul>
+			<li class="my-cart"><?php ecommerce_plus_cart_link(); ?></li>
+			<li>
+				<a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" data-tooltip="<?php esc_attr_e('My Account', 'ecommerce-plus'); ?>" title="<?php esc_attr_e('My Account', 'ecommerce-plus'); ?>">
+					<i class="fa fa-user-circle-o"></i>
+				</a>			
+			</li>
+			<?php if ( is_product() ): ?>
+			<li class="my-add-to-cart">
+			<?php 
+				ecommerce_plus_add_to_cart(); 
+			?>
+			</li>
+			<?php endif; ?>	
+		</ul>
+					
+	</div>
+	<?php
+	}
+} 

@@ -107,7 +107,7 @@ $wp_customize->add_setting( 'ecommerce_plus_options[footer_notice]',
 $wp_customize->add_control( new eCommerce_plus_Custom_Link_Control( $wp_customize, 'ecommerce_plus_options[footer_notice]',
    array(
       'link' => ECOMMERCE_PLUS_URI,
-      'description'  => esc_html__( 'Edit footer custom link, Go Pro...' , 'ecommerce-plus' ),
+      'description'  => esc_html__( 'Edit footer custom link and background colors, Go Pro...' , 'ecommerce-plus' ),
       'section' => 'ecommerce_plus_section_footer'
    )
 ) );

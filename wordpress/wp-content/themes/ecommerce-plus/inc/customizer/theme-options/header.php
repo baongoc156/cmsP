@@ -14,37 +14,6 @@ $wp_customize->add_section( 'ecommerce_plus_header', array(
 
 
 
-//
-$wp_customize->add_setting( 'ecommerce_plus_options[header_label0]',
-   array(
-	  'default' => '',
-	  'transport' => 'refresh',
-	  'sanitize_callback' => 'wp_filter_nohtml_kses'
-   )
-);
-
-$wp_customize->add_control( new eCommerce_plus_Custom_Label_Control( $wp_customize, 'ecommerce_plus_options[header_label0]',
-   array(
-	  'description'  => esc_html__( 'Header Layouts', 'ecommerce-plus' ),
-	  'section' => 'ecommerce_plus_header'
-   )
-) );
-
-//Header
-$wp_customize->add_setting( 'ecommerce_plus_options[site_header_layout]', array(
-	'sanitize_callback'   => 'ecommerce_plus_sanitize_select',
-	'default'             => $options['site_header_layout'],
-	'type'				=> 'option',
-) );
-
-
-$wp_customize->add_control(  new ecommerce_plus_Custom_Radio_Image_Control ( $wp_customize, 'ecommerce_plus_options[site_header_layout]', array(
-	'label'               => esc_html__( 'Site Header Layout', 'ecommerce-plus' ),
-	'description'         => esc_html__( '[Also you can, Edit page|Post using WordPress editor and Change header layout to change each page.]', 'ecommerce-plus' ),
-	'section'             => 'ecommerce_plus_header',
-	'choices'			  => ecommerce_plus_header_layout(),
-) ) );
-
 
 //
 $wp_customize->add_setting( 'ecommerce_plus_options[header_label]',
@@ -61,7 +30,6 @@ $wp_customize->add_control( new eCommerce_plus_Custom_Label_Control( $wp_customi
 	  'section' => 'ecommerce_plus_header'
    )
 ) );
-
 
 // menu button
 $wp_customize->add_setting( 'ecommerce_plus_options[topbar_login_register_enable]', array(
@@ -94,7 +62,6 @@ $wp_customize->add_control( 'ecommerce_plus_options[topbar_login_label]', array(
 	'label'           	=> esc_html__( 'Button Label', 'ecommerce-plus' ),
 	'section'        	=> 'ecommerce_plus_header',
 	'type'				=> 'text',
-	'active_callback'	=> 'ecommerce_plus_is_login_register_meta_section_enable',
 ) );
 
 
@@ -108,8 +75,77 @@ $wp_customize->add_control( 'ecommerce_plus_options[topbar_login_url]', array(
 	'label'           	=> esc_html__( 'Url [Link]', 'ecommerce-plus' ),
 	'section'        	=> 'ecommerce_plus_header',
 	'type'				=> 'url',
-	'active_callback'	=> 'ecommerce_plus_is_login_register_meta_section_enable',
 ) );
+
+
+//
+$wp_customize->add_setting( 'ecommerce_plus_options[header_label0]',
+   array(
+	  'default' => '',
+	  'transport' => 'refresh',
+	  'sanitize_callback' => 'wp_filter_nohtml_kses'
+   )
+);
+
+$wp_customize->add_control( new eCommerce_plus_Custom_Label_Control( $wp_customize, 'ecommerce_plus_options[header_label0]',
+   array(
+	  'description'  => esc_html__( 'Header Layouts', 'ecommerce-plus' ),
+	  'section' => 'ecommerce_plus_header'
+   )
+) );
+
+
+
+//Header
+$wp_customize->add_setting( 'ecommerce_plus_options[site_header_layout]', array(
+	'sanitize_callback'   => 'ecommerce_plus_sanitize_select',
+	'default'             => $options['site_header_layout'],
+	'type'				=> 'option',
+) );
+
+
+$wp_customize->add_control(  new ecommerce_plus_Custom_Radio_Image_Control ( $wp_customize, 'ecommerce_plus_options[site_header_layout]', array(
+	'label'               => esc_html__( 'Site Header Layout', 'ecommerce-plus' ),
+	'description'         => esc_html__( '[Also you can, Edit page|Post using WordPress editor and Change header layout to change each page.]', 'ecommerce-plus' ),
+	'section'             => 'ecommerce_plus_header',
+	'choices'			  => ecommerce_plus_header_layout(),
+) ) );
+
+
+
+// Ajax search
+$wp_customize->add_setting( 'ecommerce_plus_options[header_label4]',
+   array(
+	  'default' => '',
+	  'transport' => 'refresh',
+	  'sanitize_callback' => 'wp_filter_nohtml_kses'
+   )
+);
+
+$wp_customize->add_control( new eCommerce_plus_Custom_Label_Control( $wp_customize, 'ecommerce_plus_options[header_label4]',
+   array(
+	  'description'  => esc_html__( 'Header AJAX Search', 'ecommerce-plus' ),
+	  'section' => 'ecommerce_plus_header'
+   )
+) );
+
+//
+$wp_customize->add_setting( 'ecommerce_plus_options[ajax_search]', array(
+	'default'   => $options['ajax_search'] ,
+	'sanitize_callback' => 'ecommerce_plus_sanitize_checkbox',
+	'type'      => 'option'
+ ) );
+
+$wp_customize->add_control('ecommerce_plus_options[ajax_search]',
+	array(
+		'section'   => 'ecommerce_plus_header',
+		'label'     => esc_html__( 'Enable [Install AJAX Search for WooCommerce Plugin]', 'ecommerce-plus' ),
+		'type'      => 'checkbox'
+	)
+);
+
+
+
 
 //
 $wp_customize->add_setting( 'ecommerce_plus_options[header_label2]',
@@ -258,3 +294,5 @@ $wp_customize->add_control(
 		)
 	)
 );
+
+

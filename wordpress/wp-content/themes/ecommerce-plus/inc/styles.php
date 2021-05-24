@@ -116,8 +116,26 @@ $css = '
 		
 		.header-transparent .main-navigation .nav-menu > li > a > svg {
 			fill: #ffffff;
-		}		
-	
+		}
+		
+		.header-transparent .header-ticky-menu .main-navigation .nav-menu > li > a > svg {
+			fill: #2d2d2d;
+		}
+		
+
+		.header-storefront.header-ticky-menu .main-navigation ul.nav-menu > li > a {
+			color: #2d2d2d;
+		}
+		
+		.header-storefront.header-ticky-menu .main-navigation .nav-menu > li > a > svg {
+			fill: #2d2d2d;
+		}
+		
+		
+		.header-transparent .main-navigation ul#primary-menu li.current-menu-item > a {
+			color: #fff;
+		}								
+			
 	}
 	
 	.header-border {
@@ -257,6 +275,7 @@ $css = '
 	.widget_search form.search-form .search-submit {
 		background-color: '.$button_color.';
 		color: #fff;
+		padding: initial;
 	}
 	
 	

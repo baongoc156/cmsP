@@ -4,7 +4,7 @@
 
 	// Add sidebar section
 	$wp_customize->add_section( 'ecommerce_plus_contact', array(
-		'title'               => esc_html__('Top Bar','ecommerce-plus'),
+		'title'               => esc_html__('Contacts/Social','ecommerce-plus'),
 		'description'         => esc_html__( 'Contact and social settings and formattings.', 'ecommerce-plus' ),
 		'panel'               => 'ecommerce_plus_theme_options_panel',
 	) );

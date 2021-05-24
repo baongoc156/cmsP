@@ -16,11 +16,18 @@ jQuery(document).ready(function($) {
 /*    BACK TO TOP   */
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 1) {
+        if ($(this).scrollTop() > 40) {
             scrollup.css({bottom:"25px"});
+			
+			if(document.getElementById("scroll-cart")) { 
+				document.getElementById("scroll-cart").style.display = "block";
+			}			
         } 
         else {
             scrollup.css({bottom:"-100px"});
+			if(document.getElementById("scroll-cart")) { 
+				document.getElementById("scroll-cart").style.display = "none";
+			}			
         }
     });
 
